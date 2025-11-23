@@ -17,4 +17,6 @@ class AppColors {
   static const Color grayBtnColor = Color(0xFFEBECEF);
   static const Color printCopyBtnColor = Color(0xFFFAFAFB);
   static const Color circularProgressColor = Color(0xFFDEE0E4);
+  static const Color successGreenColor = Color(0xFF1AB335);
+  static const Color cancelRedColor = Color(0xFFD90000);
 }
