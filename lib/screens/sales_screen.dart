@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:payplus_pos_app/widgets/button_row.dart';
 
 class SalesScreen extends StatelessWidget {
   const SalesScreen({super.key});
@@ -10,7 +11,7 @@ class SalesScreen extends StatelessWidget {
       canPop: false,
       onPopInvokedWithResult: (didPop, result) async {
         if (didPop) return;
-        
+
         final shouldExit = await showDialog<bool>(
           context: context,
           builder: (context) => AlertDialog(
@@ -34,11 +35,21 @@ class SalesScreen extends StatelessWidget {
         }
       },
       child: Scaffold(
-        body: Center(
-          child: Text(
-            'Sales Screen',
-            style: TextStyle(fontSize: 24),
-          ),
+        body: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Center(child: Text('Sales Screen', style: TextStyle(fontSize: 24))),
+            ButtonRow(
+              grayButtonText: 'Next',
+              blueBlueText: 'Submit',
+              onTapGrayButton: () {
+                // Handle gray button tap
+              },
+              onTapBlueButton: () {
+                // Handle blue button tap
+              },
+            ),
+          ],
         ),
       ),
     );
