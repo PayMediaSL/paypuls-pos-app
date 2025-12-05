@@ -17,7 +17,7 @@ class BlueButton extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: Container(
-        padding: EdgeInsets.symmetric(vertical: 8.h, horizontal: 50.w),
+        padding: EdgeInsets.symmetric(vertical: 18.h, horizontal: 50.w),
         decoration: BoxDecoration(
           border: Border.all(
             color: AppColors.primaryColor,

@@ -19,22 +19,25 @@ class ButtonRow extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceAround,
-      children: [
-        Flexible(
-          flex: 1,
-          child: GrayButton(
-            grayButtonText: grayButtonText,
-            onTap: onTapGrayButton,
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 10.0),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        children: [
+          Flexible(
+            flex: 1,
+            child: GrayButton(
+              grayButtonText: grayButtonText,
+              onTap: onTapGrayButton,
+            ),
           ),
-        ),
-        SizedBox(width: 10.r),
-        Flexible(
-          flex: 1,
-          child: BlueButton(blueBlueText: blueBlueText, onTap: onTapBlueButton),
-        ),
-      ],
+          SizedBox(width: 10.r),
+          Flexible(
+            flex: 1,
+            child: BlueButton(blueBlueText: blueBlueText, onTap: onTapBlueButton),
+          ),
+        ],
+      ),
     );
   }
 }

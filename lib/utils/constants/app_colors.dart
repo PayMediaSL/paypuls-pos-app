@@ -20,4 +20,5 @@ class AppColors {
   static const Color circularProgressColor = Color(0xFFDEE0E4);
   static const Color successGreenColor = Color(0xFF1AB335);
   static const Color cancelRedColor = Color(0xFFD90000);
+  static const Color iconColor = Color(0xFF1D2D49);
 }

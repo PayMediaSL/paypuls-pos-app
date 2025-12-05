@@ -4,23 +4,23 @@ import 'package:payplus_pos_app/utils/constants/app_colors.dart';
 import 'package:payplus_pos_app/utils/constants/assets_path.dart';
 import 'package:payplus_pos_app/widgets/button_row.dart';
 
-class SuccessScreen extends StatefulWidget {
-  const SuccessScreen({
+class FailScreen extends StatefulWidget {
+  const FailScreen({
     super.key,
     this.paymentAmount,
-    required this.paymentStatus,
-    required this.paymentStatusDescription,
+    this.paymentStatus,
+    this.paymentStatusDescription,
   });
 
   final String? paymentAmount;
-  final String paymentStatus;
-  final String paymentStatusDescription;
+  final String? paymentStatus;
+  final String? paymentStatusDescription;
 
   @override
-  State<SuccessScreen> createState() => _SuccessScreenState();
+  State<FailScreen> createState() => _FailScreenState();
 }
 
-class _SuccessScreenState extends State<SuccessScreen> {
+class _FailScreenState extends State<FailScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -75,19 +75,19 @@ class _SuccessScreenState extends State<SuccessScreen> {
             width: 120,
             child: DecoratedBox(
               decoration: BoxDecoration(
-                color: AppColors.successGreenColor,
+                color: AppColors.cancelRedColor,
                 borderRadius: BorderRadius.circular(60.r),
               ),
               child: Padding(
-                padding: const EdgeInsets.all(10.0),
-                child: Image.asset(AssetsPath.successTick),
+                padding: const EdgeInsets.all(35.0),
+                child: Image.asset(AssetsPath.closeMark),
               ),
             ),
           ),
           Column(
             children: [
               Text(
-                widget.paymentStatus,
+                widget.paymentStatus!,
                 style: TextStyle(
                   fontSize: 30.r,
                   fontWeight: FontWeight.w600,
@@ -95,7 +95,7 @@ class _SuccessScreenState extends State<SuccessScreen> {
                 ),
               ),
               Text(
-                widget.paymentStatusDescription,
+                widget.paymentStatusDescription!,
                 style: TextStyle(
                   fontSize: 16.r,
                   fontWeight: FontWeight.w400,
@@ -106,10 +106,10 @@ class _SuccessScreenState extends State<SuccessScreen> {
           ),
           SizedBox(height: 70.h),
           ButtonRow(
-            grayButtonText: 'Next',
-            blueBlueText: 'Submit',
+            grayButtonText: 'Back',
+            blueBlueText: 'Close',
             onTapGrayButton: () {
-              // Handle gray button tap
+              Navigator.of(context).pop();
             },
             onTapBlueButton: () {
               // Handle blue button tap

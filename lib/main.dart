@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:payplus_pos_app/routes/route_generator.dart';
+import 'package:payplus_pos_app/utils/constants/app_colors.dart';
 import 'package:payplus_pos_app/utils/constants/routes.dart';
 
 void main() {
@@ -24,10 +25,11 @@ class _MyAppState extends State<MyApp> {
       builder: (context, child) {
         return MaterialApp(
           theme: ThemeData(
-            colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+            colorScheme: ColorScheme.fromSeed(seedColor: AppColors.primaryColor),
           ),
           onGenerateRoute: RouteGenerator.generateRoute,
           initialRoute: Routes.splashScreen,
+          debugShowCheckedModeBanner: false
         );
       },
     );

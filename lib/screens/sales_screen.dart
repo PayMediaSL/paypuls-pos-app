@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:payplus_pos_app/widgets/button_row.dart';
+import 'package:payplus_pos_app/utils/constants/dimensions.dart';
+import 'package:payplus_pos_app/widgets/custom_header.dart';
 
 class SalesScreen extends StatelessWidget {
   const SalesScreen({super.key});
@@ -35,21 +36,17 @@ class SalesScreen extends StatelessWidget {
         }
       },
       child: Scaffold(
-        body: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Center(child: Text('Sales Screen', style: TextStyle(fontSize: 24))),
-            ButtonRow(
-              grayButtonText: 'Next',
-              blueBlueText: 'Submit',
-              onTapGrayButton: () {
-                // Handle gray button tap
-              },
-              onTapBlueButton: () {
-                // Handle blue button tap
-              },
-            ),
-          ],
+        body: Padding(
+          padding: const EdgeInsets.all(Dimensions.screenWidthFactor),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              CustomHeader(),
+              Center(
+                child: Text('Sales Screen', style: TextStyle(fontSize: 24)),
+              ),
+            ],
+          ),
         ),
       ),
     );
